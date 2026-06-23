@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_Eventos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" forecolor="#FF5722" fontName="SansSerif" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#757575" fontName="SansSerif" fontSize="14" isBold="false"/>
+	<style name="Column_Header" forecolor="#000000" backcolor="#2196F3" fontName="SansSerif" fontSize="11" isBold="true"/>
+	<style name="Detail_Even" mode="Opaque" backcolor="#F3F4F6" fontName="SansSerif" fontSize="9"/>
+	<style name="Detail_Odd" mode="Opaque" backcolor="#FFFFFF" fontName="SansSerif" fontSize="9"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT id, nombreEvento, tipoEvento, servicios, modalidad, fechaEvento, costo FROM eventix_db.eventos ORDER BY id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="nombreEvento" class="java.lang.String"/>
+	<field name="tipoEvento" class="java.lang.String"/>
+	<field name="servicios" class="java.lang.String"/>
+	<field name="modalidad" class="java.lang.String"/>
+	<field name="fechaEvento" class="java.sql.Date"/>
+	<field name="costo" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="45" backcolor="#FF9800" forecolor="#FF9800"/>
+				<graphicElement/>
+			</rectangle>
+			<staticText>
+				<reportElement style="Title" x="10" y="5" width="535" height="35" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="22"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE EVENTOS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="45" width="555" height="30" backcolor="#FFF3E0" forecolor="#FFE0B2"/>
+				<graphicElement/>
+			</rectangle>
+			<staticText>
+				<reportElement style="SubTitle" x="10" y="50" width="200" height="20" forecolor="#FF5722"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema Eventix]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="SubTitle" x="430" y="50" width="115" height="20" forecolor="#FF5722"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column_Header" x="0" y="0" width="30" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column_Header" x="30" y="0" width="100" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column_Header" x="130" y="0" width="80" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column_Header" x="210" y="0" width="80" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[SERVICIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column_Header" x="290" y="0" width="70" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[MODALIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column_Header" x="360" y="0" width="80" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column_Header" x="440" y="0" width="115" height="35" backcolor="#2196F3"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<topPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<leftPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<bottomPen lineWidth="1.0" lineColor="#1E3A8A"/>
+					<rightPen lineWidth="1.0" lineColor="#1E3A8A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" size="11"/>
+				</textElement>
+				<text><![CDATA[COSTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail_Even" x="0" y="0" width="30" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail_Even" x="30" y="0" width="100" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEvento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail_Even" x="130" y="0" width="80" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoEvento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail_Even" x="210" y="0" width="80" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servicios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail_Even" x="290" y="0" width="70" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{modalidad}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Detail_Even" x="360" y="0" width="80" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaEvento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$ #,##0.00">
+				<reportElement style="Detail_Even" x="440" y="0" width="115" height="28"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<topPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<leftPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<bottomPen lineWidth="0.5" lineColor="#D1D5DB"/>
+					<rightPen lineWidth="0.5" lineColor="#D1D5DB"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="40" backcolor="#FF9800" forecolor="#FF9800"/>
+				<graphicElement/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="10" width="300" height="20" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[© 2026 Sistema Eventix - Reporte de Eventos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="10" width="115" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
